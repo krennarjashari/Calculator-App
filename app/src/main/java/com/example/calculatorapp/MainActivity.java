@@ -3,6 +3,7 @@ package com.example.calculatorapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -28,6 +29,162 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onClicks() {
+
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"0");
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"1");
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"2");
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"3");
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"4");
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"5");
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"6");
+            }
+        });
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"7");
+            }
+        });
+
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"8");
+            }
+        });
+
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+"9");
+            }
+        });
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (editText.getText().toString().length()>0){
+                    valueOne=Float.parseFloat(editText.getText().toString());
+                    isAddition=true;
+                    editText.setText(null);
+                }
+            }
+        });
+
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (editText.getText().toString().length()>0){
+                    valueOne=Float.parseFloat(editText.getText().toString());
+                    isSub=true;
+                    editText.setText(null);
+                }
+            }
+        });
+
+        buttonMultiplication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (editText.getText().toString().length()>0){
+                    valueOne=Float.parseFloat(editText.getText().toString());
+                    isMultiplication=true;
+                    editText.setText(null);
+                }
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (editText.getText().toString().length()>0){
+                    valueOne=Float.parseFloat(editText.getText().toString());
+                    isDivision=true;
+                    editText.setText(null);
+                }
+            }
+        });
+
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                valueTwo=Float.parseFloat(editText.getText().toString());
+
+                if (isAddition){
+                    editText.setText(valueOne+valueTwo+"");
+                    isAddition=false;
+                }else if (isSub){
+                    editText.setText(valueOne-valueTwo+"");
+                    isSub=false;
+                }
+                else if (isMultiplication){
+                    editText.setText(valueOne*valueTwo+"");
+                    isMultiplication=false;
+                }
+
+                else if(isDivision){
+                    editText.setText(valueOne/valueTwo+"");
+                    isDivision=false;
+                }
+            }
+        });
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText("");
+            }
+        });
+
+        buttonPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText(editText.getText()+".");
+            }
+        });
     }
 
     private void findViews() {
